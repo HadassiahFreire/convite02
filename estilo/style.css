@@ -75,9 +75,10 @@ html, body {
     font-size: 2.5em;
     font-weight: lighter;
     text-shadow: 0 0 15px rgba(252, 252, 252, 0.5);
+    
 }  
 .typing2 {
-    color: #580521;
+    color: #ffffff;
     border-right: 2px solid #580521 !important;  /* Simula o cursor */
     white-space: nowrap;
     overflow: hidden;
@@ -138,24 +139,57 @@ html, body {
     
 }
 
+span {
+    color: #ffffff;
+    text-shadow: 2px 2px 2px black;
+    display: block; /* Faz o span ocupar toda a largura disponível */
+    text-align: center; /* Centraliza o texto */
+    padding-bottom: 5px;
+    font-weight: bolder;
+    font-weight: bolder;
+    font-size: 1.3em;
+ 
+}
+
 .details {
+
     max-width: 800px;
     max-height: 800px;
-    width: 200px;
-    height: 200px;
-    margin: 20px ;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
+    width: 250px;
+    height: 70px;
+    margin: 3px ;
+    padding: 5px;
+ 
+    
+    
     background-position: top center;
     transition: all 0.4s ease-in-out;
+    border: 1px solid #CBAC98;
+    box-shadow: 4px 6px 5px 1px #00000091;
+   
     
     
 }
+.details#diferente {
+    width: 260px;
+    height: 100px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+    border: 1px solid white;
+    
+}
+
 
 .details > p {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center
+    padding-bottom: 10px;
+    text-align: center; /* Centraliza todos os textos */
+    display: flex;
+    flex-direction: column; /* Deixa os elementos em coluna */
+    align-items: center; /* Centraliza na horizontal */
+   
+
 }
 
 .buttons {
