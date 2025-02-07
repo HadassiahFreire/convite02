@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'Acumin';
+    src: url('../fontes/Acumin-BdPro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Sriracha';
+    src: url('../fontes/Sriracha-Regular.ttf') format('truetype');
+}
+
+:root {
+    --font-padra0: 'Acumin', sans-serif; /* Defina a variável corretamente */
+    --font-destaque: 'Sriracha','cursive';
+
+    --cor01: #CBAC98; 
+    --cor02: #580521; 
+    --cor03: #FFEBC0; 
+    --cor04: #FFDF88;  
+    
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Acumin'; /* Use a variável no body */
+
+}
+
+.img {
+
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-position: top center;
+} 
+
+/* Imagem padrão (para telas maiores) */
+.img {
+    background-image: url('../imagens/GAB05414.jpg');
+}
+
+/* Quando a tela for pequena (máximo 768px, por exemplo) */
+@media (max-width: 768px) {
+    .img {
+        background-image: url('../imagens/GAB05456.jpg');
+    }
+}
+
+.escrevendo {
+    color:  #ffffff;
+    font-family: var(--font-destaque);
+    background-color:  #cbac982a;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0px 3px 0px 7px;
+    border-radius: 15px;
+    border:1px solid #580521 ;
+    margin-bottom: 20px;
+    margin-top: 4px;
+    margin-left: 4px;
+    font-size: 2.5em;
+    font-weight: lighter;
+    text-shadow: 0 0 15px rgba(252, 252, 252, 0.5);
+}  
+.typing2 {
+    color: #580521;
+    border-right: 2px solid #580521 !important;  /* Simula o cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding: 6px 4px 6px 4px;
+    font-family: var(--font-destaque);
+    letter-spacing: 4px;
+    margin: 20px 0;
+    font-size: 3.2em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.466);
+    min-height: 102px;
+    font-weight: lighter;
+    word-wrap: break-word; /* Quebra a palavra se for necessário */
+    white-space:  nowrap;   /* Permite que o texto quebre a linha automaticamente */
+    overflow-wrap: break-word;
+    display: block;
+   font-style: oblique;
+
+}  
+/* Efeito de piscar no cursor */
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+.typing2 {
+    animation: blinkCursor 0.7s steps(2) infinite;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Elementos ficam um abaixo do outro */
+    align-items: center; /* Centraliza na tela */
+    justify-content: center;
+    margin-top: 20px;
+    min-height: 70vh;
+    
+}
+.details:hover {
+    transform: scale(1.10);
+    border: 1px solid #FFDF88 ;
+    opacity: 1px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    color: var(--cor04);
+    
+    
+}
+
+.conteudos {
+
+    display: flex; /* Alinha os quadrados em linha */
+    justify-content: center; /* Centraliza os quadrados */
+    margin-top: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;   
+    
+}
+
+.details {
+    max-width: 800px;
+    max-height: 800px;
+    width: 200px;
+    height: 200px;
+    margin: 20px ;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background-position: top center;
+    transition: all 0.4s ease-in-out;
+    
+    
+}
+
+.details > p {
+    color: rgb(0, 0, 0);
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: auto;
+    padding-bottom: 0px;
+}
+
+.btn {
+    padding: 9px 20px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1); /* Efeito de vidro */
+    backdrop-filter: blur(10px); /* Desfoque para efeito de vidro */
+    transition: all 0.4s ease-in-out;
+    color: white;
+    z-index: 1;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px; /* Define a espessura da borda */
+    background: linear-gradient(45deg, var(--dourado), var(--roxo));
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.btn:hover::before {
+    opacity: 1;
+    background-color: transparent;
+    
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    backdrop-filter: none;
+    color: #FFD700; /* Para destacar o texto */
+    background: transparent;
+    border-color: var(--cor04);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+   
+}
+
+.btn-confirm {
+    background: linear-gradient(45deg, #cbac9883,#ffebc069);
+    border: 2px solid #ffffff6c ;
+    color: #ffffff;
+}
+--cor01: #CBAC98; 
+--cor02: #580521; 
+--cor03: #FFEBC0; 
+
+.btn-decline {
+    background: linear-gradient(45deg,#580521ab , #ffebc08c);
+    color: white;
+    border: 2px solid #ffebc069;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="p-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <main class="img">
+        <div>
+        <h1 class="escrevendo" id="escrevendo-texto"> Celebre Este Momento </h1>
+        </div>
+        <div>
+         <h2 class="typing2" id="typing-text2">  COMIGO!</h2>
+        </div>
+        <div class="container">
+            <div class="conteudos">
+                <div class="details">
+                    <p>📅 Data: 14/03/2025</p>
+                    <p>⏰ Hora: 19:30</p>
+                    <p>📍 Local: Mansão dos Sonhos - Av. das Conquistas, 1000</p>
+                </div>
+                <div class="details">
+                    <p>❌ Proibido o uso de confetes no evento.</p>
+                    <p>✅ Permitidos: balões, apitos e outros itens para barulho.</p>
+            </div>
+        </div>
+            
+    
+        <div class="buttons">
+            <button class="btn btn-confirm" onclick="confirmarPresenca()">Confirmar Presença 🎉</button>
+            <button class="btn btn-decline" onclick="naoPoderIr()">Não Poderei Ir 😢</button>
+        </div>
+        
+    </main>
+
+
+
+   
+    <script>
+        // Efeito de digitação no título
+        const titulo = document.querySelector('h2');
+        titulo.style.opacity = '0';
+        
+        setTimeout(() => {
+            titulo.style.transition = 'opacity 1.5s';
+            titulo.style.opacity = '1';
+        }, 1000);
+
+        
+        const textElement = document.getElementById('typing-text2'); 
+        const text = "Comigo!"; // O texto que será digitado
+        let index = 0; 
+        let isDeleting = false;
+
+        function typeEffect() {
+            if (!isDeleting && index < text.length) {
+                textElement.textContent = text.substring(0, index + 1); // Adiciona uma letra
+                index++;
+                setTimeout(typeEffect, 150); // Tempo para cada letra aparecer
+            } else if (isDeleting && index > 0) {
+                textElement.textContent = text.substring(0, index - 1); // Remove uma letra
+                index--;
+                setTimeout(typeEffect, 100); // Tempo para apagar
+            } else {
+                isDeleting = !isDeleting; // Alterna entre escrever e apagar
+                setTimeout(typeEffect, 1000); // Tempo de espera antes de inverter
+            }
+        }
+
+        typeEffect();
+    </script>
+
+</body>
+</html>
